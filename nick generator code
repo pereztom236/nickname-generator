@@ -1,0 +1,30 @@
+function generateNickname(length) {
+  var vowels = "aeiou";
+  var consonants = "bcdfghjklmnpqrstvwxyz";
+  var nickname = "";
+  
+  if (length >= 5 && length <= 10) {
+    for (var i = 0; i < length; i++) {
+      if (i % 2 === 0) {
+        nickname += consonants.charAt(Math.floor(Math.random() * consonants.length));
+      } else {
+        nickname += vowels.charAt(Math.floor(Math.random() * vowels.length));
+      }
+    }
+  } else {
+    console.log("Invalid length. Please enter a number between 5 and 10.");
+    return;
+  }
+  
+  return nickname;
+}
+
+
+You can generate a random nickname by calling the function and passing in a number between 5 and 10:
+
+
+console.log(generateNickname(7)); // Output: "bacufeg"
+
+
+This code generates a nickname by alternating between randomly selecting a consonant and a vowel from predefined string of vowels and consonants respectively.
+It then checks if the passed length is between 5 and 10, if not it will log an error message and return nothing.
